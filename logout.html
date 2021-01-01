@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Welcome </h1>
+    <p id="qwer"></p>
+    Your Email and Password is saved until you logout
+    <span id="rewq"></span>
+
+    <script>
+        let Dname = JSON.parse(localStorage.getItem("SPname"));
+        let Demail = JSON.parse(localStorage.getItem("SPemail"));
+        let Dpassword = JSON.parse(localStorage.getItem("SPpassword"));
+
+        document.getElementById("qwer").innerHTML= Dname;
+        document.getElementById("rewq").innerHTML= Demail;
+    </script>
+
+</body>
+
+</html>

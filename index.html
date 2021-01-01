@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+</head>
+
+
+<body>
+    
+
+
+    <h2> Sign Up</h2>
+
+
+
+    <form  onsubmit="return signup()">
+
+        Name:
+        <input type="text" id="Uname" maxlength="15" placeholder="First Name" required="required">
+        <br>
+        <br>
+        E-mail:
+        <input type="text" id="email" maxlength="30" placeholder="email@gmail.com" required="required">
+
+        <br>
+        <br>
+        Password :
+        <input type="password" id="password" required="required">
+
+        <button>submit</button>
+    </form>
+   
+  <script>
+
+        var Sname = [];
+        var Semail = [];
+        var Spassword = [];
+
+        function signup() {
+
+
+            Sname.push(document.getElementById("Uname").value);
+            Semail.push(document.getElementById("email").value);
+            Spassword.push(document.getElementById("password").value);
+
+            localStorage.setItem("SPname", JSON.stringify(Sname));
+            localStorage.setItem("SPemail", JSON.stringify(Semail));
+            localStorage.setItem("SPpassword", JSON.stringify(Spassword));
+
+            alert("You Have Signed Up");
+
+            window.location.href = "./login.html";
+            return false;
+        }
+        document.getElementById("Uname").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("password").value = "";
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+<body>
+    <h1>Login Form </h1>
+
+    <form action="#" onsubmit="return login()">
+        E-mail:
+        <input type="text" placeholder="email@gmail.com" id="2ndemail" required>
+        <br>
+        <br>
+        Password :
+        <input type="password" placeholder="*********" id="2ndpassword" required>
+        <br>
+        <br>
+        <button>Login</button>
+    </form>
+
+    <script>
+
+        let Lname = JSON.parse(localStorage.getItem("SPname"));
+        let Lemail = JSON.parse(localStorage.getItem("SPemail"));
+        let Lpassword = JSON.parse(localStorage.getItem("SPpassword"));
+
+
+
+        function login() {
+
+            let LPemail = document.getElementById("2ndemail").value;
+            let LPpassword = document.getElementById("2ndpassword").value;
+            let isFound = false;
+
+
+            for (let i = 0; i < Lemail.length; i++) {
+                if (LPemail === Lemail[i]) {
+                    isFound = [i];
+                    break;
+                }
+            }
+
+            if (isFound === false) {
+                alert("user not found")
+            } else if (LPpassword === Lpassword[isFound]) {
+
+                alert("login success");
+                window.location.href = "logout.html";
+
+
+
+            } else {
+                alert("Error Password")
+            }
+
+
+
+            return false;
+        }
+        // localStorage.setItem("bala", JSON.stringify(SPemail));
+        // localStorage.setItem("yula", JSON.stringify(SPpassword));
+
+
+        // document.getElementById("2ndemail") = "";
+        // document.getElementById("2ndpassword") = "";
+
+
+    </script>
+
+
+</body>
+
+</html>
